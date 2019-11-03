@@ -27,6 +27,12 @@ class Board extends Component {
         }
     };
 
+    resetGame = () => {
+        this.setState({
+            score: 0,ids:[]
+        });
+    }
+    
     shuffle = array => {
         let count = array.length, temp, rand;
         while(count) {
@@ -40,6 +46,14 @@ class Board extends Component {
 
 
     render() {
+        if(this.state.score === 12){
+            return (
+                <div>
+                    <h2>Congrats! You won!</h2>
+                    <button onClick={this.resetGame}>Play Again?</button>
+                </div>
+            );
+        }
         return (
             <div>
                 <Header score={this.state.score} highscore={this.state.topScore} />
