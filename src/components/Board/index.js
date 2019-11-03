@@ -31,7 +31,6 @@ class Board extends Component {
         let count = array.length, temp, rand;
         while(count) {
             rand = Math.floor(Math.random() * count --);
-            
             temp = array[count];
             array[count] = array[rand];
             array[rand] = temp;
