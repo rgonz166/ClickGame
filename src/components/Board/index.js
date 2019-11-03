@@ -45,7 +45,14 @@ class Board extends Component {
             <div>
                 {console.log("Board Loaded")};
                 <Wrapper>
-                    <FriendCard />
+                    {this.state.friends.map(friend => (
+                        <FriendCard 
+                            key={friend.id}
+                            id={friend.id}
+                            image={friend.image}
+                            handleClick={this.handleClick}
+                        />
+                    ))}
                 </Wrapper>
             </div>
         )
