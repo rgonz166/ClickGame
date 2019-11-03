@@ -14,7 +14,6 @@ class Board extends Component {
     handleClick = id => {
         let {score, topScore, ids} = this.state;
         if(ids.indexOf(id) === -1) {
-            console.log("Nice");
             this.setState({
                 score: score + 1,
                 topScore: score + 1 > topScore ? score + 1 : topScore,
@@ -22,7 +21,6 @@ class Board extends Component {
             });
             ids.push(id);
         } else {
-            console.log("Wrong");
             this.setState({ score: 0, ids:[]});
         }
     };
@@ -43,7 +41,7 @@ class Board extends Component {
     render() {
         return (
             <div>
-                {console.log("Board Loaded")};
+                {console.log(this.state.score)}
                 <Wrapper>
                     {this.state.friends.map(friend => (
                         <FriendCard 
