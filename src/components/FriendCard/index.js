@@ -3,9 +3,9 @@ import "./style.css";
 
 function FriendCard(props) {
     return (
-        <div className="card">
+        <div className="card" onClick={() => props.handleClick(props.id)}>
             <div className="img-container">
-                <img alt={props.id} src={props.image} onClick={() => props.handleClick(props.id)} />
+                <img alt={props.id} src={props.image} />
             </div>
             <span onClick={() => props.handleClick(props.id)} className="spin"></span>
         </div>

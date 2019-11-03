@@ -1,0 +1,10 @@
+nav {
+    background: rgb(16,147,223);
+
+}
+
+.score,.high-score{
+    color: white;
+    margin: 2px 5px;
+    font-weight: 400;
+}

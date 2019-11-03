@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 
 function Header(props) {
@@ -7,8 +8,8 @@ function Header(props) {
             <a className="navbar-brand" href="/">
                 Memory Game!
             </a>
-            <h5>Score: {props.score}</h5>
-            <h5>Hi-Score: {props.highscore}</h5>
+            <h5 className="score">Score: {props.score}</h5>
+            <h5 className="high-score">Hi-Score: {props.highscore}</h5>
         </nav>
     );
 }
