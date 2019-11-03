@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FriendCard from "../FriendCard";
 import Wrapper from "../Wrapper";
+import Header from "../Header";
 import friends from "../../friends.json";
 
 class Board extends Component {
@@ -42,6 +43,7 @@ class Board extends Component {
         return (
             <div>
                 {console.log(this.state.score)}
+                <Header score={this.state.score} highscore={this.state.topScore} />
                 <Wrapper>
                     {this.state.friends.map(friend => (
                         <FriendCard 
