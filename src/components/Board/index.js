@@ -7,6 +7,7 @@ import friends from "../../friends.json";
 class Board extends Component {
     state = {
         friends,
+        bgColor: true,
         score: 0,
         topScore: 0,
         ids: []
@@ -22,7 +23,7 @@ class Board extends Component {
             });
             ids.push(id);
         } else {
-            this.setState({ score: 0, ids:[]});
+            this.setState({score: 0,ids:[]});
         }
     };
 
@@ -42,13 +43,13 @@ class Board extends Component {
     render() {
         return (
             <div>
-                {console.log(this.state.score)}
                 <Header score={this.state.score} highscore={this.state.topScore} />
                 <Wrapper>
                     {this.state.friends.map(friend => (
                         <FriendCard 
                             key={friend.id}
                             id={friend.id}
+                            bg-color={this.state.bgColor}
                             image={friend.image}
                             handleClick={this.handleClick}
                         />
