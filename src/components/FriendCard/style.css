@@ -13,3 +13,11 @@
     height: 200px;
     background: rgb(16, 147, 223);
 }
+
+.card>.img-container>img{
+    width: 45%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
