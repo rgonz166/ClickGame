@@ -7,7 +7,6 @@ import friends from "../../friends.json";
 class Board extends Component {
     state = {
         friends,
-        bgColor: true,
         score: 0,
         topScore: 0,
         ids: []
@@ -19,11 +18,15 @@ class Board extends Component {
             this.setState({
                 score: score + 1,
                 topScore: score + 1 > topScore ? score + 1 : topScore,
-                friends: this.shuffle(friends)
+                friends: this.shuffle(friends),
             });
             ids.push(id);
         } else {
-            this.setState({score: 0,ids:[]});
+            this.setState({
+                friends,
+                score: 0,
+                ids:[],
+            });
         }
     };
 
@@ -44,7 +47,6 @@ class Board extends Component {
         return array;
     }
 
-
     render() {
         if(this.state.score === 12){
             return (
@@ -62,7 +64,7 @@ class Board extends Component {
                         <FriendCard 
                             key={friend.id}
                             id={friend.id}
-                            bg-color={this.state.bgColor}
+                            wrong={friend.wrong}
                             image={friend.image}
                             handleClick={this.handleClick}
                         />

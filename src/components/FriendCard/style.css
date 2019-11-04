@@ -14,7 +14,11 @@
     /* box-shadow: 0 3px 6px #999, 0 3px 6px #999; */
 }
 
-
+.loss {
+    border-style: solid;
+    border-width: 5px;
+    border-color: red;
+}
 
 .card>.img-container>img{
     width: 45%;

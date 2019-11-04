@@ -3,7 +3,7 @@ import "./style.css";
 
 function FriendCard(props) {
     return (
-        <div className="card" onClick={() => props.handleClick(props.id)}>
+        <div className={`card ${props.wrong ? "loss":""}`} onClick={() => props.handleClick(props.id)}>
             <div className="img-container">
                 <img alt={props.id} src={props.image} />
             </div>
@@ -11,5 +11,6 @@ function FriendCard(props) {
         </div>
     )
 }
+/* card */
 
 export default FriendCard;
